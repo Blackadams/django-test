@@ -19,6 +19,10 @@ def register(request):
     return render(request, 'users/register.html', {'form' : form})
 
 
+
+
+
+
 @login_required #Some metaprogramming sh--err decorators.
 def profile(request):
     if request.method == 'POST':

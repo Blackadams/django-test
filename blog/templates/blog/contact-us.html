@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="page-top-area set-bg" data-setbg="{% static 'pics/2.jpg' %}">
+<div class="breadcrumb-area">
+<a href="#">Home</a> / <span>Contact us</span>
+</div>
+</div>
+
+{% include "blog/contact.html" %}
+{% endblock %}

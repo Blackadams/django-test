@@ -1,21 +1,105 @@
 {% extends "blog/base.html" %}
 {% load static %}
-{% block title %}
-    LogOut
-{% endblock %}
+{% load widget_tweaks %}
+{% load semanticui %}
+
 
 {% block stylesheets %}
-    <link rel="stylesheet" type='text/css' href="{% static 'users/main.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/flaticon.css' %}" />
+<link rel="stylesheet" href="{% static 'css/animate.css' %}"  />
+<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"  />
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
 {% endblock %}
 
 
 {% block content %}
-<div class='user-register border-style-1'>
+
+
+
+{% include "blog/navbar.html" %}
+
+
+<!-- 
+<div class="box" >
+      <h1 id="logintoregister">Login</h1>
+    <div class="group">      
+    
+      {{ form.username |add_class:" inputMaterial"}}
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Username</label>
+      </div>
+      <div class="group">      
+      {{ form.password|add_class:" inputMaterial"}}
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Password</label>
+      </div>
+
+
+      <div class="group show">      
+      <input class="inputMaterial" type="password" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Comferma Password</label>
+      </div>
+      <div class="group show">      
+      <input class="inputMaterial" type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Nome</label>
+      </div>
+      <div class="group show">      
+      <input class="inputMaterial" type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Cognome</label>
+      </div>
+      <div class="group show">      
+      <input class="inputMaterial" type="text" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Email</label>
+      </div>
+
+  <button id="buttonlogintoregister">Login</button>
+      <p id="plogintoregister">No account? </p><p id="textchange" onclick="register()"> Register</p>
+    </div>
+ -->
+
+
+
+<!-- <div style="position: fixed;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+             transform: translate(-50%, -50%);">
+ -->
+<!-- 
+
+
     <form class='register-form' method='POST'>
         {% csrf_token %}
         <fieldset class="form-field-set">
             <legend class="legend-style-1"> Login </legend>
-            {{ form.as_p }}
+            <div class="col-md-6">
+            {{ form.username |add_class:"ui labeled input"}}
+        </div> <br>
+            {{ form.password }}
         </fieldset>
 
         <input class='form-submit-button margin-top-20' type='submit' value='Log In' />
@@ -26,5 +110,61 @@
             <a href="{% url 'user-register' %}">Sign Up</a>
         </small>
     </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page-top-area set-bg" data-setbg="{% static 'pics/2.jpg' %}">
+<div class="breadcrumb-area">
+<a href="#">Home</a> / <span>Login</span>
 </div>
+</div>
+
+
+
+
+
+<div class="container">
+  <form  method='POST'>
+    {% csrf_token %}
+    <h1>
+      Sign in
+    </h1>
+    <div class="form-content">
+
+        <p>username</p>
+
+        {{ form.username|add_class:"user-name"}}
+
+       <p>password</p>
+
+        {{ form.password|add_class:"password"}}
+
+      
+        <input class='form-submit-button margin-top-20' type='submit' value='Log In' />
+   
+      <br />
+      <div class="signup-message">
+        <a href="#">Forgot your password?</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+
 {% endblock %}

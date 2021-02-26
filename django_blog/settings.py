@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'widget_tweaks',
+    'semanticuiforms'
 ]
 
 MIDDLEWARE = [
@@ -128,7 +130,7 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_REDIRECT_URL = 'blog-mail'
 #This is what the login_required decorator seeks. Realisically I can also overwrite
 #The decorator, and have it functionally target a login page.
 LOGIN_URL = 'user-login'

@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User 
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
+from blog.models import About,Event
 
 
 class UserRegistrationForm (UserCreationForm):
@@ -25,3 +26,15 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile 
         fields = ['image']
+
+
+class AboutUsUpdateForm(forms.ModelForm):
+    class Meta:
+        model = About
+        fields = ['content']
+
+
+class EventUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ['title','image','content']

@@ -10,15 +10,30 @@ User Profile
 
 
 {% block content %}
-<div class='content-section margin-bottom-20'>
-    <div class='media border-style-1'>
-        <div class='profile-ctn flex-default'>
-            <img class='user-profile' src="{{ user.profile.image.url }}">
-            <div class='media-body'>
-                <h2 class='account-heading'>{{ user.username }}</h2>
-                <p class='text-secondary margin-vert-10'>{{ user.email }}</p>
-            </div>
-        </div>
+<!-- 
+<div class="ui card">
+  <div class="image">
+    <img src="{{ user.profile.image.url }}">
+  </div>
+  <div class="content">
+    <a class="header">{{ user.username }}</a>
+    <div class="meta">
+      <span class="date">Joined in 2013</span>
+    </div>
+    <div class="description">
+      {{ user.email }}
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      22 Friends
+    </a>
+  </div>
+</div>
+
+
+
         <div class='padding-10'>
         <form class='register-form' method='POST' enctype='multipart/form-data'>
             {% csrf_token %}
@@ -33,5 +48,34 @@ User Profile
         </div>
     </div>
 </div>
+
+
+
+
+
+<div style="margin: 30px">
+
+<div class="ui huge labeled input">
+  <div class="ui label">
+    username
+  </div>
+  <input type="text" placeholder="">
+</div>
+
+<div class="ui huge labeled input">
+  <div class="ui label">
+    email
+  </div>
+  <input type="text" placeholder="">
+</div>
+
+
+
+
+
+
+ -->
+
+ <br><br><br><br><br><br>
 
 {% endblock %}

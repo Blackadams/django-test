@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+
+{% block stylesheets %}
+    <link rel="stylesheet" type='text/css' href="{% static 'users/main.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+<div class="hero-slider owl-carousel">
+<div class="hs-item set-bg sp-pad" data-setbg="{% static 'pics/try.jpg' %}">
+<div class="hs-text">
+<h2 class="hs-title">Resources</h2>
+<!-- <p class="hs-des">Proffesional Insitution of <br> Engineering Architect & Technology SOMALI.</p> -->
+</div>
+</div>
+<div class="hs-item set-bg sp-pad" data-setbg="{% static 'pics/try2.jpg' %}">
+<div class="hs-text">
+<h2 class="hs-title">Resources</h2>
+<!-- <p class="hs-des">Proffesional Insitution of <br> Engineering Architect & Technology SOMALI.</p> -->
+</div>
+</div>
+</div>
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,299 @@
+
+{% load static %}
+
+
+{% block stylesheets %}
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/flaticon.css' %}" />
+<link rel="stylesheet" href="{% static 'css/animate.css' %}"  />
+<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}"  />
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+{% include "blog/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-top-area set-bg" data-setbg="{% static 'pics/2.jpg' %}">
+<div class="breadcrumb-area">
+<a href="#">Home</a> / <span>Dashboard</span>
+</div>
+</div>
+<div style="margin: 30px">
+
+
+
+
+
+
+<!-- <div style="font-size: 20px" class="ui menu">
+  <div class="item">
+
+    <div class="ui left icon input">
+  <input type="text" placeholder="Search members...">
+  <i class="users icon"></i>
+</div>
+
+
+  </div>
+  <div class="right item">
+    <div class="ui action input">
+      <input type="text" placeholder="Navigate to...">
+      <div class="ui button">Go</div>
+    </div>
+  </div>
+</div>
+ -->
+
+
+
+
+<br><br>
+
+<div class="ui grid">
+  <div class="four wide column">
+    <div style="font-size: 25px" class="ui vertical fluid tabular menu">
+      <a class="item active" data-tab="bio-tab">
+        Members
+      </a>
+      <a class="item" data-tab="pics-tab">
+         Update Pictures
+      </a>
+      <a class="item" data-tab="companies-tab">
+        Update Events
+      </a>
+      <a class="item" data-tab="links-tab">
+        Update About
+      </a>
+    </div>
+  </div>
+  <div class="twelve wide stretched column">
+
+
+
+<!-- members -->
+    <div style="font-size: 20px" class="ui tab segment active" data-tab="bio-tab">
+
+        <!-- success message -->
+    	<div class="ui success message">
+   	 		<i class="close icon"></i>
+  		<div class="header">
+    		Your user registration was successful.
+  		</div>
+  			<p>You may now log-in with the username you have chosen</p>
+		</div>
+		<!-- end success message -->
+
+		<!-- table -->
+
+		<table class="ui celled table">
+  			<thead>
+   				 <tr><th>Name</th>
+   					 <th>Age</th>
+   					 <th>Job</th>
+  				</tr></thead>
+
+
+
+  		<tbody>
+   			 <tr>
+      			<td>
+        			<h4 class="ui image header">
+         			 <img src="{{ user.profile.image.url }}" class="ui mini rounded image">
+         			 <div class="content">{{ user.username }} 
+           			 	<div class="sub header">Human Resources </div>
+        			</div>
+     				</h4>
+  				</td>
+      
+
+      			<td>
+        			22
+      			</td>
+
+      			<td>
+       				 Engineer
+      			</td>
+    		</tr>
+
+
+ 		 </tbody>
+		</table>
+
+
+		<div class="extra content">
+      	<div class="ui two buttons">
+        <div class="huge ui basic green button">Update Member</div>
+        <div class="huge ui basic red button">Remove Member</div>
+      	</div>
+
+
+    </div>
+
+     
+    </div>
+<!-- end of members -->
+
+
+<!-- file manager -->
+    <div class="ui tab segment" data-tab="pics-tab">
+
+      	<div class="ui placeholder segment">
+  		<div class="ui icon header">
+   		<i class="pdf file outline icon"></i>
+    		No documents are listed for this customer.
+  		</div>
+  		<div class="ui primary button">Add Document</div>
+		</div>
+
+    </div>
+<!-- end of file manager -->
+
+<!-- events -->
+
+    <div class="ui tab segment" data-tab="companies-tab">
+      <div class="ui placeholder segment">
+  		<div class="ui icon header">
+   		<i class="pdf file outline icon"></i>
+    		No events are listed.
+  		</div>
+  		<div class="ui primary button">Add Event</div>
+		</div>
+    </div>
+
+<!-- end of events -->
+
+<!-- content update -->
+    <div class="ui tab segment" data-tab="links-tab">
+
+    	{% include "blog/about_form.html" %}
+       
+    </div>
+ <!-- end of content update -->
+ 
+  </div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('.ui.tabular.menu .item').tab();
+});
+</script>
+
+
+
+
+
+<!-- 
+<div  class="ui grid">
+  <div class="four wide column">
+    <div style="font-size: 25px" class="ui vertical fluid tabular menu">
+      <a class="item active"  data-tab="tab-name">
+        Members
+      </a>
+      <a class="item" data-tab="tab-one">
+        File manager
+      </a>
+      <a class="item" data-tab="tab-two">
+        Analytics
+      </a>
+      <a class="item" data-tab="tab-three">
+        Events
+      </a>
+      <a class="item " data-tab="tab-four">
+        Content Update
+      </a>
+    </div>
+  </div>
+
+
+
+  <div class="twelve wide stretched column" data-tab="tab-one">
+
+<div>
+   <div style="font-size: 25px" class="ui segment">
+   	<div class="ui success message">
+   	 <i class="close icon"></i>
+  	<div class="header">
+    Your user registration was successful.
+  </div>
+  <p>You may now log-in with the username you have chosen</p>
+	</div>
+
+
+<div >
+<table class="ui celled table">
+  <thead>
+    <tr><th>Name</th>
+    <th>Age</th>
+    <th>Job</th>
+  </tr></thead>
+
+
+
+  <tbody>
+    <tr>
+      <td>
+        <h4 class="ui image header">
+          <img src="{{ user.profile.image.url }}" class="ui mini rounded image">
+          <div class="content">
+            {{ user.username }}
+            <div class="sub header">Human Resources
+          </div>
+        </div>
+      </h4>
+  </td>
+      <td>
+        22
+      </td>
+      <td>
+        Engineer
+      </td>
+    </tr>
+    <tr>
+
+
+  </tbody>
+</table>
+</tr>
+
+
+
+
+<div class="extra content">
+      <div class="ui two buttons">
+        <div class="massive ui basic green button">Update Member</div>
+        <div class="massive ui basic red button">Remove Member</div>
+      </div>
+
+
+    </div>
+
+</div>
+
+  </div>
+
+
+
+
+</div>
+</div>
+
+<script>
+
+	$(document).ready(function(){
+   $('.ui .item').on('click', function() {
+      $('.ui .item').removeClass('active');
+      $(.twelve).addClass('active');
+   });             
+});
+
+</script> -->
+{% endblock %}
